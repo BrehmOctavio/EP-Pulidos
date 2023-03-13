@@ -1,0 +1,426 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+@mixin display {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html{
+  scroll-behavior: smooth;
+  background-color: rgb(28, 28, 28);  
+}
+
+.body{
+    height: auto;
+    width: 1515px;
+    margin: auto;
+    padding: 0;
+
+    .header{
+        @include display();
+        justify-content: space-between;
+        padding-left: 1.5rem;
+        background: linear-gradient(to right, rgb(213, 18, 18), rgb(93, 21, 21));
+        
+        .logo{
+            height: 6rem;
+            width: auto;
+            margin: 0.5rem;
+        }
+
+        @media screen and (max-width: 500px){
+            .logo{
+                height: 3rem;
+                width: auto;
+            }
+        }
+
+        .nav{
+            @include display();
+            width: auto;
+
+            .ul{
+                @include display();
+                width: auto;
+
+                .li{
+                    list-style: none;
+                    margin-right: 2rem;
+                    transition: all 0.1;
+                    color: rgb(255, 255, 255);
+                    border-bottom: 2px solid transparent;
+
+                    &:hover{
+                        cursor: pointer;
+                        border-bottom: 2px solid rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .nav{
+                display: none;
+            }
+        }
+
+        .div-social{
+            @include display();
+            width: 50%;
+            padding: 0.5rem;
+            justify-content: flex-end;
+
+            .div-tel{
+                @include display();
+                width: auto;
+
+                .img-tel{
+                    height: 1.5rem;
+                    width: auto;
+                    filter: invert(1);
+                    margin-right: 0.5rem;
+                }
+
+                .number{
+                    color: rgb(255, 255, 255);
+                    font-size: 0.9rem;
+                    margin-right: 3rem;
+                }
+            }
+
+            .social-item{
+                height: 1.5rem;
+                width: auto;
+                margin-right: 1.7rem;
+                transition: all 0.1s;
+                filter: invert(1);
+                
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .div-social{
+                display: none;
+            }
+        }
+
+        .menu{
+            height: 2rem;
+            width: auto;
+            filter: invert(1);
+            margin-right: 1rem;
+            display: none;
+        }
+
+        @media screen and (max-width: 500px){
+            .menu{
+                display: block;
+            }
+        }
+
+        .menu-close{
+            height: 2rem;
+            width: auto;
+            filter: invert(1);
+            margin-right: 1rem;
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 500px){
+        .header{
+            height: auto;
+            padding: 0.5rem;
+            position: fixed;
+            z-index: 3;
+        }
+    }
+
+    .header-responsive{
+        @include display();
+        height: 100%;
+        width: 0;
+        position: fixed;
+        background-color: rgb(16, 16, 16);
+        transition: all 0.2s;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .nav-responsive, .ul{
+            @include display();
+            height: auto;
+            flex-direction: column;
+            padding: 0;
+
+            .li{
+                font-size: 2rem;
+                list-style: none;
+                color: rgb(255, 255, 255);
+                margin: 2rem
+            }
+        }
+
+        .nav-responsive{
+            display: none;
+        }
+
+        .div-social-responsive, .div-tel-responsive{
+            @include display();
+            height: auto;
+            flex-direction: column;
+
+            .img-tel-responsive{
+                height: 3rem;
+                width: auto;
+                filter: invert(1);
+            }
+
+            .number-responsive{
+                font-size: 1.5rem;
+                color: rgb(255, 255, 255);
+            }
+        }
+
+        .div-social-responsive{
+            display: none;
+        }
+    }
+
+    .section{
+        @include display();
+        flex-direction: column;
+
+        .article-1{
+            @include display();
+            height: 600px;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 6rem;
+            background-image: url("../assets/images/background-car-2.jpg");
+            background-size: cover;
+        
+            .div-info{
+                @include display();
+                flex-direction: column;
+                align-items: flex-start;
+
+                .title-name{
+                    width: 60%;
+                    color: rgb(255, 255, 255);
+                    font-size: 4rem;
+                }
+
+                @media screen and (max-width: 500px){
+                    .title-name{
+                        width: 100%;
+                        text-align: start;
+                        font-size: 2.3rem;
+                        text-shadow: 0px 0px 4px black;
+                    }
+                }
+
+                .btn-contratar{
+                    padding: 1rem;
+                    height: auto;
+                    width: auto;
+                    font-size: 1rem;
+                    transition: all 0.2s;
+                    background-color: rgb(213, 18, 18);
+                    color: rgb(255, 255, 255);
+                    border: none;
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: rgb(16, 16, 16);
+                    }
+                }
+            }
+
+            @media screen and (max-width: 500px){
+                .div-info{
+                    align-items: center;
+                }
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .article-1{
+                height: 630px;
+            }
+        }
+
+        .article-2{
+            @include display();
+            height: 1100px;
+            flex-direction: column;
+
+            .title-servicios{
+                font-size: 2rem;
+                color: rgb(255, 255, 255);
+                margin-bottom: 6rem;
+                border-bottom: 0.5rem solid rgb(213, 18, 18);
+                padding-bottom: 0.5rem;
+            }
+
+           .div-all-servicios{
+                @include display();
+
+                .div-servicio{
+                    @include display();
+                    height: 650px;
+                    width: 400px;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    margin: 3rem;
+                    margin-top: 0;
+                    background: linear-gradient(to bottom, rgb(213, 18, 18), rgb(77, 12, 12));
+
+                    .img-servicios{
+                        height: auto;
+                        width: 100%;
+                    }
+
+                    .second-title-servicios{
+                        font-size: 1.5rem;
+                        color: rgb(255, 255, 255);
+                    }
+
+                    .text-servicios{
+                        font-size: 0.9rem;
+                        color: rgb(255, 255, 255);
+                        width: 80%;
+                        text-align: center;
+                    }
+
+                    .price{
+                        font-size: 2rem;
+                        color: rgb(255, 255, 255);
+                    }
+
+                    .btn-buy{
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        height: 3rem;
+                        width: auto;
+                        font-size: 1rem;
+                        transition: all 0.1s;
+                        background-color: black;
+                        color: rgb(255, 255, 255);
+                        border: none;
+
+                        &:hover{
+                            cursor: pointer;
+                            background-color: rgb(16, 16, 16);
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 500px){
+                    .div-servicio{
+                        width: 100%;
+                    }
+                }
+           }
+
+           @media screen and (max-width: 500px){
+                .div-all-servicios{
+                    flex-direction: column
+                }
+            }
+
+        }
+
+        @media screen and (max-width: 500px){
+            .article-2{
+                height: auto
+            }
+        }
+
+        .article-3{
+            @include display();
+            background-color:rgb(213, 18, 18);
+            flex-direction: column;
+            padding-top: 4rem;
+            
+            .title-galeria{
+                font-size: 2rem;
+                color: rgb(255, 255, 255);
+                margin-bottom: 6rem;
+                border-bottom: 0.5rem solid rgb(255, 255, 255);
+                padding-bottom: 0.5rem;
+            }
+
+            .div-galeria{
+                @include display();
+                flex-wrap: wrap;
+                width: 80%;
+
+                .img-galeria{
+                    height: 20rem;
+                    width: auto;
+                    margin: 2rem;
+                    border-radius: 1rem;
+                    transition: all 0.2s;
+                    border: 0.2rem solid rgb(255, 255, 255);
+
+                    &:hover{
+                        transform: translateY(-2rem);
+                    }
+                }
+
+                @media screen and (max-width: 500px){
+                    .img-galeria{
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer{
+        @include display();
+        justify-content: space-between;
+        height: auto;
+        padding: 1.5rem;
+        background-color: rgb(16, 16, 16);
+
+        .title-footer{
+            font-size: 0.8rem;
+            color: rgb(255, 255, 255);
+        }
+
+        .div-social-item{
+            @include display();
+
+            .social-item{
+                height: 1.6rem;
+                width: auto;
+                margin-right: 1rem;
+                filter: invert(1);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    .body{
+        width: 100%;
+    }
+}
+
+
+
+
